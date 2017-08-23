@@ -14,7 +14,7 @@ if [ -z ${n} ]; then
   echo "A single integer is required"
   exit 1
 elif [ ${n} -lt 0 ]; then
-  echo "Integer may not be negetive"
+  echo "Integer may not be negative"
   exit 1
 
 fi
