@@ -34,15 +34,16 @@ fibonacci.php
 
 USE:
 
-When successfully deployed, accessing the hosted page directly will provide a message:
+When successfully deployed, accessing the hosted page directly will provide the message:
       'A single integer is required'
 
 If a supplied parameter of ?integer={n} is provided to the direct url, the page will provide the first {n} Fibonacci numbers, starting from zero.
 
-If a negative number is used for value ?integer={n}, the page will provide a message:
+If a negative number is used for {n} of ?integer={n}, the page will provide the message:
       'Integer may not be negative'
       
 EXAMPLES:
+
    URL: localhost/fibonacci.php
 OUTPUT: A single integer is required
 
@@ -53,6 +54,17 @@ OUTPUT: Integer may not be negative
 OUTPUT: 0 1 1 2 3
 
 
+LIMITATIONS:
+
+32-bit = max ?integer={n} value 47
+64-bit = max ?integer={n} value 93
+
+
+OTHER NOTES:
+
+The fibonacci.php contains a commented out section of code.  If uncommented, the page will display a textbox and submit button. Providing a value to the textbox and pressing submit will populate 'integer' value for service.
+
+fib.sh has been designed to accept a second paramater of function. If not function is given (default), the Fibonacci function will run.
 
 
 
