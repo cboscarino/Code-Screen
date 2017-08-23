@@ -26,7 +26,7 @@ fibonacci.php
    
    This is the service to be hosted from the webserver.  It should be placed in the intended deploy directory for the webserver being used.
   
-   EXAMPLE: server:/Apache24/htdocs/fibonacci.php
+   EXAMPLE LOCATION: server:/Apache24/htdocs/fibonacci.php
   
    IMPORTANT!: The fibonacci.php will need to be edited to reflect the environment, including the command needed to execute the fib.sh script.
   
