@@ -13,7 +13,7 @@ function Fibonacci {
 if [ -z ${n} ]; then
   echo "A single integer is required"
   exit 1
-elif [ ${n} -lt 0 ]; then
+elif [ ${n} -lt 0 ] 2>/dev/null; then
   echo "Integer may not be negative"
   exit 1
 
