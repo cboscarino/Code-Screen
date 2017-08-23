@@ -5,11 +5,11 @@ Chris Boscarino 08.2017
 v1.0 - Initial Release
 
 REQUIREMENTS:  
-          1. A webserver with the ability to run php.
-          2. A machine with the ability to run bash.
-          3. Edits to the fibonacci.php to reflect the command required to execute fib.sh.
+          1. A webserver with the ability to run php
+          2. A machine with the ability to run bash
+          3. Edits to the fibonacci.php to reflect the command required to execute fib.sh
 
-The Fibonacci web service for Virtustream is made up of two elements.
+The Fibonacci web service for Virtustream is made up of two elements:
 
 fib.sh
 fibonacci.php
@@ -65,7 +65,8 @@ LIMITATIONS:
 
    32-bit = max ?integer={n} value 47
    64-bit = max ?integer={n} value 93
-
+   
+   Providing values that are larger than the maximum specified for the architectures listed above will cause integer overflow, resulting in output that does not represent calculations of the Fibonacci sequence.
 
 OTHER NOTES:
 
