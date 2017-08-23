@@ -2,6 +2,8 @@
 The Fibonacci web service for Virtustream 
 Chris Boscarino 08.2017
 
+v1.0 - Initial Release
+
 REQUIREMENTS:  
           1. A webserver with the ability to run php.
           2. A machine with the ability to run bash.
@@ -15,56 +17,61 @@ fibonacci.php
 
 1. fib.sh
          
-   This is a bash script that performes the computations of the Fibonacci sequence and provides output for fibonacci.php.  This script should be made executable to user desired. This will most likely be the functional user running the webserver. The scipt must also be placed in a location that is accessable to the webserver.
+    This is a bash script that performes the computations of the Fibonacci sequence and provides output for fibonacci.php.  This script should be made executable to user desired. This will most likely be the functional user running the webserver. The scipt must also be placed in a location that is accessable to the webserver.
    
-   EXAMPLE LOCATION: server:/webscripts/fib.sh
+    EXAMPLE LOCATION: server:/webscripts/fib.sh
 
 
 2. fibonacci.php
    
    This is the service to be hosted from the webserver.  It should be placed in the intended deploy directory for the webserver being used.
-  EXAMPLE: server:/Apache24/htdocs/fibonacci.php
   
-  IMPORTANT!: The fibonacci.php will need to be edited to reflect the environment, including the command needed to execute the fib.sh script.
+   EXAMPLE: server:/Apache24/htdocs/fibonacci.php
   
-  EXAMPLE:
-  17:fibonacci.php - $result = shell_exec('C:\cygwin64\bin\bash C:\cygwin64\home\Boscarino\scripts\fib.sh ' . $_GET['integer']);
-           edit to - $result = shell_exec('/bin/bash /webscripts/fib.sh ' . $_GET['integer']);
-                                                                       ^ --space required
+   IMPORTANT!: The fibonacci.php will need to be edited to reflect the environment, including the command needed to execute the fib.sh script.
+  
+   EXAMPLE:
+   17:fibonacci.php - $result = shell_exec('C:\cygwin64\bin\bash C:\cygwin64\home\Boscarino\scripts\fib.sh ' . $_GET['integer']);
+            edit to - $result = shell_exec('/bin/bash /webscripts/fib.sh ' . $_GET['integer']);
+                                                                        ^ --space required
 
 
 USE:
 
-When successfully deployed, accessing the hosted page directly will provide the message:
+   When successfully deployed, accessing the hosted page directly will provide the message:
       'A single integer is required'
 
-If a supplied parameter of ?integer={n} is provided to the direct url, the page will provide the first {n} Fibonacci numbers, starting from zero.
+   If a supplied parameter of ?integer={n} is provided to the direct url, the page will provide the first {n} Fibonacci numbers, starting from zero.
 
-If a negative number is used for {n} of ?integer={n}, the page will provide the message:
+   If a negative number is used for {n} of ?integer={n}, the page will provide the message:
       'Integer may not be negative'
       
 EXAMPLES:
 
-   URL: localhost/fibonacci.php
-OUTPUT: A single integer is required
+      URL: localhost/fibonacci.php
+   OUTPUT: A single integer is required
 
-   URL: localhost/fibonacci.php?integer=-1
-OUTPUT: Integer may not be negative
+      URL: localhost/fibonacci.php?integer=-1
+   OUTPUT: Integer may not be negative
+   
+      URL: localhost/fibonacci.php?integer=foobar
+   OUTPUT: 
 
-   URL: localhost/fibonacci.php?integer=5
-OUTPUT: 0 1 1 2 3
+      URL: localhost/fibonacci.php?integer=5
+   OUTPUT: 0 1 1 2 3
 
 
 LIMITATIONS:
 
-32-bit = max ?integer={n} value 47
-64-bit = max ?integer={n} value 93
+   32-bit = max ?integer={n} value 47
+   64-bit = max ?integer={n} value 93
 
 
 OTHER NOTES:
 
-The fibonacci.php contains a commented out section of code.  If uncommented, the page will display a textbox and submit button. Providing a value to the textbox and pressing submit will populate 'integer' value for service.
+   The fibonacci.php contains a commented out section of code.  If uncommented, the page will display a textbox and submit button. Providing a value to the textbox and pressing submit will populate 'integer' value for service.
 
-fib.sh has been designed to accept a second paramater of function. If not function is given (default), the Fibonacci function will run.
+   The fib.sh has been designed to accept a second parameter of function. If no function is given (default), the Fibonacci function will run.
+
 
 END
