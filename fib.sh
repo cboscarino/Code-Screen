@@ -22,9 +22,7 @@ fi
 num1=0
 num2=1
 
-
 for (( i=0; ${i}<${n}; i++ ))
-
 do
   output="${output} ${num1}"
   numT=$((num1+num2))
@@ -34,7 +32,8 @@ done
 
 echo $output
 
-}
+} #--End Fibonacci
+
 
 case ${f} in
   "fib" )
