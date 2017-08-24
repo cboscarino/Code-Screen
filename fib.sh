@@ -1,7 +1,7 @@
 #!/bin/bash
 
-n=$1
-f=$2
+n=$1 #--Integer Parameter
+f=$2 #--Function Parameter
 
 #Will do Fibonacci function by default until otherwise specified.
 if [ -z $2 ]; then
@@ -10,27 +10,31 @@ fi
 
 function Fibonacci {
 
-if [ -z ${n} ]; then
-  echo "A single integer is required"
-  exit 1
-elif [ ${n} -lt 0 ] 2>/dev/null; then
-  echo "Integer may not be negative"
-  exit 1
+  if [ -z ${n} ]; then
+    echo "A single integer is required"
+    exit 1
+  elif [ ${n} -lt 0 ] 2>/dev/null; then
+    echo "Integer may not be negative"
+    exit 1
 
-fi
+  fi
 
-num1=0
-num2=1
+  num1=1
+  num2=1
 
-for (( i=0; ${i}<${n}; i++ ))
-do
-  output="${output} ${num1}"
-  numT=$((num1+num2))
-  num1=$num2
-  num2=$numT
-done
+  if [ ${n} -ne 0 ]; then
+  output="0"
+  fi
 
-echo $output
+  for (( i=1; ${i}<${n}; i++ ))
+  do
+    output="${output}, ${num1}"
+    numT=$((num1+num2))
+    num1=$num2
+    num2=$numT
+  done
+
+  echo $output
 
 } #--End Fibonacci
 
@@ -43,5 +47,5 @@ case ${f} in
   *)
     echo "No function provided" ;;
 esac
- 
+
 exit 0
