@@ -31,19 +31,19 @@ fibonacci.php
    IMPORTANT!: The fibonacci.php will need to be edited to reflect the environment, including the command needed to execute the fib.sh script.
   
    EXAMPLE:
-   17:fibonacci.php - $result = shell_exec('C:\cygwin64\bin\bash C:\cygwin64\home\Boscarino\scripts\fib.sh ' . $_GET['integer']);
-            edit to - $result = shell_exec('/bin/bash /webscripts/fib.sh ' . $_GET['integer']);
-                                                                        ^ --space required
+   2:fibonacci.php - $result = shell_exec('C:\cygwin64\bin\bash C:\cygwin64\home\Boscarino\scripts\fib.sh ' . $_GET['integer']);
+           edit to - $result = shell_exec('/bin/bash /webscripts/fib.sh ' . $_GET['integer']);
+                                                                       ^ --space required
 
 
 USE:
 
-   When successfully deployed, accessing the hosted page directly will provide the message:
+   When successfully deployed, accessing the hosted page directly will provide the JSON formated message:
       'A single integer is required'
 
    If a supplied parameter of ?integer={n} is provided to the direct url, the page will provide the first {n} Fibonacci numbers, starting from zero.
 
-   If a negative number is used for {n} of ?integer={n}, the page will provide the message:
+   If a negative number is used for {n} of ?integer={n}, the page will provide the JSON formated message:
       'Integer may not be negative'
       
 EXAMPLES:
@@ -70,9 +70,7 @@ LIMITATIONS:
 
 OTHER NOTES:
 
-   The fibonacci.php contains a commented out section of code.  If uncommented, the page will display a textbox and submit button. Providing a value to the textbox and pressing submit will populate 'integer' value for service.
-
-   The fib.sh has been designed to accept a second parameter of function. If no function is given (default), the Fibonacci function will run.
+     The fib.sh has been designed to accept a second parameter of function. If no function is given (default), the Fibonacci function will run.
 
 
 END
