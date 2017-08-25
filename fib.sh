@@ -1,7 +1,7 @@
 #!/bin/bash
 
-n=$1 #--Integer Parameter
-f=$2 #--Function Parameter
+n=$1 
+f=$2 
 
 #Will do Fibonacci function by default until otherwise specified.
 if [ -z $2 ]; then
@@ -23,7 +23,7 @@ function Fibonacci {
   num2=1
 
   if [ ${n} -ne 0 ]; then
-  output="0"
+  output="[0"
   fi
 
   for (( i=1; ${i}<${n}; i++ ))
@@ -33,7 +33,8 @@ function Fibonacci {
     num1=$num2
     num2=$numT
   done
-
+  
+  output="${output}]"
   echo $output
 
 } #--End Fibonacci
