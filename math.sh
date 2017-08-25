@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
-  echo "Must provide a function"
+  echo "Must provide a function name"
   exit 1
 fi
 
@@ -37,7 +37,7 @@ function Fibonacci {
 
 
 function Future {
-  echo "Future function not defined:  $*"
+  echo "Future function not yet defined:  $*"
 } #--End Future
 
 
@@ -51,7 +51,7 @@ case ${f} in
     Future $* 
     ;;
   *)
-    echo "No valid function provided"
+    echo "No valid function name provided"
     exit 1
     ;;
 esac
