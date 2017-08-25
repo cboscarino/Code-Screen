@@ -1,7 +1,7 @@
 #!/bin/bash
 
-n=$1 
-f=$2 
+n=$1
+f=$2
 
 #Will do Fibonacci function by default until otherwise specified.
 if [ -z $2 ]; then
@@ -16,7 +16,6 @@ function Fibonacci {
   elif [ ${n} -lt 0 ] 2>/dev/null; then
     echo "Integer may not be negative"
     exit 1
-
   fi
 
   num1=1
