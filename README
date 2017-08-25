@@ -58,7 +58,7 @@ EXAMPLES:
    OUTPUT: 
 
       URL: localhost/fibonacci.php?integer=5
-   OUTPUT: 0 1 1 2 3
+   OUTPUT: [0, 1, 1, 2, 3]
 
 
 LIMITATIONS:
