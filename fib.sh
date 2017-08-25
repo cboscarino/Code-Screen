@@ -21,7 +21,7 @@ function Fibonacci {
   num1=1
   num2=1
 
-  if [ ${n} -ne 0 ]; then
+  if [ ${n} -ne 0 ] 2>/dev/null; then
   output="[0"
   fi
 
