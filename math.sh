@@ -7,7 +7,6 @@ fi
 
 
 function Fibonacci {
-
   n=$1
   if [ -z ${n} ]; then
     echo "A single integer is required"
@@ -34,13 +33,11 @@ function Fibonacci {
 
   output="${output}]"
   echo $output
-
 } #--End Fibonacci
 
 
 function Future {
-echo "Future function not defined:  $*"
-
+  echo "Future function not defined:  $*"
 } #--End Future
 
 
