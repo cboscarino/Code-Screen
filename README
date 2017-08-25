@@ -11,7 +11,7 @@ REQUIREMENTS:
 
 The Fibonacci web service for Virtustream is made up of two elements:
 
-fib.sh
+math.sh
 fibonacci.php
 
 
