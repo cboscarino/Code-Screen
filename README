@@ -15,11 +15,11 @@ fib.sh
 fibonacci.php
 
 
-1. fib.sh
+1. math.sh
          
     This is a bash script that performes the computations of the Fibonacci sequence and provides output for fibonacci.php.  This script should be made executable to user desired. This will most likely be the functional user running the webserver. The scipt must also be placed in a location that is accessable to the webserver.
    
-    EXAMPLE LOCATION: server:/webscripts/fib.sh
+    EXAMPLE LOCATION: server:/webscripts/math.sh
 
 
 2. fibonacci.php
@@ -31,9 +31,9 @@ fibonacci.php
    IMPORTANT!: The fibonacci.php will need to be edited to reflect the environment, including the command needed to execute the fib.sh script.
   
    EXAMPLE:
-   2:fibonacci.php - $result = shell_exec('C:\cygwin64\bin\bash C:\cygwin64\home\Boscarino\scripts\fib.sh ' . $_GET['integer']);
-           edit to - $result = shell_exec('/bin/bash /webscripts/fib.sh ' . $_GET['integer']);
-                                                                       ^ --space required
+   2:fibonacci.php - $result = shell_exec('C:\cygwin64\bin\bash C:\cygwin64\home\Boscarino\scripts\fib.sh fib ' . $_GET['integer']);
+           edit to - $result = shell_exec('/bin/bash /webscripts/fib.sh fib ' . $_GET['integer']);
+                                                                           ^ --space required
 
 
 USE:
@@ -70,7 +70,13 @@ LIMITATIONS:
 
 OTHER NOTES:
 
-     The fib.sh has been designed to accept a second parameter of function. If no function is given (default), the Fibonacci function will run.
+     The math.sh can independantly.
+     ./math.sh $function $ARG1 $ARG2 $ARG3 ${...}
+     
+     List of valid function name arguments that may be provided to math.sh:
+       
+       fib  - Uses first argument after function name as {n} to provide the first {n} Fibonacci numbers, starting from zero.
+       other - (FOR FUTURE USE) Provides the function name as well as any additional arguments used.
 
 
 END
