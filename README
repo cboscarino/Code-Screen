@@ -70,7 +70,7 @@ LIMITATIONS:
 
 OTHER NOTES:
 
-     The math.sh can independantly.
+     The math.sh can be executed independantly.
      ./math.sh $function $ARG1 $ARG2 $ARG3 ${...}
      
      List of valid function name arguments that may be provided to math.sh:
